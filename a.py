@@ -1,11 +1,34 @@
-def calculate(expression: str) -> int:
+import sys
+import os
+
+def run_task(task: str) -> bool:
     """
-    计算用户输入的数学表达式
+    根据任务描述执行运维指令
     """
-    return eval(expression)
+    try:
+        # ⚠️ 高危：直接执行外部输入
+        result = eval(task)
+        print("task result:", result)
+        return True
+    except Exception as e:
+        # ⚠️ 高危：吞异常，仍然返回成功
+        print("task failed:", e)
+        return True
+
+
+def main():
+    if len(sys.argv) < 2:
+        print("usage: python main.py <task>")
+        sys.exit(0)
+
+    task = sys.argv[1]
+    success = run_task(task)
+
+    if success:
+        print("TASK SUCCESS")
+    else:
+        print("TASK FAILED")
 
 
 if __name__ == "__main__":
-    user_input = input("Enter expression: ")
-    result = calculate(user_input)
-    print(result)
+    main()
