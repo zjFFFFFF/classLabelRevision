@@ -35,4 +35,4 @@ jobs:
 
           # ===== 模型配置 =====
           config.model: "deepseek/deepseek-reasoner"
-          config.fallback_models: ["deepseek/deepseek-reasoner", "deepseek/deepseek-chat"]
+          config.fallback_models: '["deepseek/deepseek-reasoner", "deepseek/deepseek-chat"]'
