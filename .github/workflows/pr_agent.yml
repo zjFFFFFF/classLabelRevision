@@ -30,6 +30,9 @@ jobs:
           # GitHub 内置 Token，用于发评论
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+          # ✅ 明确指定 provider
+          config.llm_provider: "deepseek"
+
           # DeepSeek API Key（你自己加的 secret）
           DEEPSEEK_KEY: "sk-7a6db79995204c748c2693050d752e7d"
 
