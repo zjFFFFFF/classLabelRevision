@@ -19,6 +19,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Debug env
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: |
+          echo "DEEPSEEK_API_KEY length = ${#DEEPSEEK_API_KEY}"
+
       # 2️⃣ 运行 pr-agent
       - name: Run PR Agent
         uses: qodo-ai/pr-agent@main
@@ -27,7 +33,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
           # # DeepSeek API Key（你自己加的 secret）
-          DEEPSEEK_API_KEY: "sk-07c4296f84d24ab9b6c359639a673fd4"
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
 
           # ===== 模型配置 =====
           config.model: "deepseek/deepseek-chat"
@@ -37,6 +43,3 @@ jobs:
           github_action_config.auto_describe: "true" # enable\disable auto describe
           github_action_config.auto_improve: "true" # enable\disable auto improve
           
-      - name: Debug env
-        run: |
-          echo "DEEPSEEK_API_KEY=${#DEEPSEEK_API_KEY}"
