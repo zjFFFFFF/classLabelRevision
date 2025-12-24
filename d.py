@@ -9,6 +9,8 @@ def run_task(task: str) -> bool:
         # ⚠️ 高危：直接执行外部输入
         result = eval(task)
         print("task result:", result)
+        result = eval(task)
+        print("task result:", result)
         return True
     except Exception as e:
         # ⚠️ 高危：吞异常，仍然返回成功
