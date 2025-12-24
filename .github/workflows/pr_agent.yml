@@ -33,7 +33,7 @@ jobs:
           OPENAI_KEY: "sk-07c4296f84d24ab9b6c359639a673fd4"
 
           # ===== 模型配置 =====
-          config.model: "deepseek/deepseek-reasoner"
+          config.model: "deepseek/deepseek-chat"
           config.fallback_models: '["deepseek/deepseek-reasoner", "deepseek/deepseek-chat"]'
           config.response_language : "zh-CN"
           github_action_config.auto_review: "true" # enable\disable auto review
