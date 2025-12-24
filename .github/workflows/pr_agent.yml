@@ -19,11 +19,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Debug OPENAI_KEY
-        run: echo "${OPENAI_KEY}"
-        env:
-          OPENAI_KEY: ${{ secrets.DEEPSEEK_KEY }}
-
       # 2️⃣ 运行 pr-agent
       - name: Run PR Agent
         uses: qodo-ai/pr-agent@main
@@ -34,7 +29,8 @@ jobs:
           # DeepSeek API Key（你自己加的 secret）
           DEEPSEEK_KEY: ${{ secrets.DEEPSEEK_KEY }}
           KEY: ${{ secrets.DEEPSEEK_KEY }}
-          OPENAI_KEY: ${{ secrets.DEEPSEEK_KEY }}
+          OPENAI__KEY: ${{ secrets.DEEPSEEK_KEY }}
+          OPENAI__KEY: ${{ secrets.DEEPSEEK_KEY }}
 
           # ===== 模型配置 =====
           config.model: "deepseek/deepseek-reasoner"
