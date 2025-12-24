@@ -28,6 +28,7 @@ jobs:
 
           # DeepSeek API Key（你自己加的 secret）
           OPENAI_API_KEY: sk-07c4296f84d24ab9b6c359639a673fd4
+          OPENAI_API_BASE: https://api.deepseek.com/v1
 
           # ===== 模型配置 =====
           config.model: "deepseek/deepseek-chat"
