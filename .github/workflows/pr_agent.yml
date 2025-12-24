@@ -30,12 +30,9 @@ jobs:
           # GitHub 内置 Token，用于发评论
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-          # ✅ 明确指定 provider
-          config.llm.provider: "deepseek"
-
           # DeepSeek API Key（你自己加的 secret）
           DEEPSEEK_KEY: "${{ secrets.DEEPSEEK_KEY }}"
 
           # ===== 模型配置 =====
-          config.model: "deepseek-reasoner"
-          config.fallback_models: '["deepseek-reasoner", "deepseek-chat"]'
+          config.model: "deepseek/deepseek-reasoner"
+          config.fallback_models: ["deepseek/deepseek-reasoner", "deepseek/deepseek-chat"]

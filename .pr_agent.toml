@@ -1,0 +1,4 @@
+[config]
+# models
+model="deepseek/deepseek-reasoner"
+fallback_models=["deepseek/deepseek-reasoner", "deepseek/deepseek-chat"]
