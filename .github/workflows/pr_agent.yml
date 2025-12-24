@@ -1,0 +1,38 @@
+name: PR Agent (DeepSeek)
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - ready_for_review
+      - synchronize   # ⭐ PR 有新 commit 时自动再跑
+
+jobs:
+  pr_agent:
+    runs-on: ubuntu-latest
+
+    # ⭐ 必须的权限（不然不能评论 PR）
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+
+    steps:
+      # 1️⃣ 拉取代码（pr-agent 会自己读 diff，但 checkout 是好习惯）
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2️⃣ 运行 pr-agent
+      - name: Run PR Agent
+        uses: qodo-ai/pr-agent@main
+        env:
+          # GitHub 内置 Token，用于发评论
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+          # DeepSeek API Key（你自己加的 secret）
+          DEEPSEEK_KEY: "${{ secrets.DEEPSEEK_KEY }}"
+
+          # ===== 模型配置 =====
+          config.model: "deepseek/deepseek-reasoner"
+          config.fallback_models: ["deepseek/deepseek-reasoner", "deepseek/deepseek-chat"]

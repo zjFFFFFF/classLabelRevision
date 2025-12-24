@@ -14,21 +14,3 @@ def run_task(task: str) -> bool:
         # ⚠️ 高危：吞异常，仍然返回成功
         print("task failed:", e)
         return True
-
-
-def main():
-    if len(sys.argv) < 2:
-        print("usage: python main.py <task>")
-        sys.exit(0)
-
-    task = sys.argv[1]
-    success = run_task(task)
-
-    if success:
-        print("TASK SUCCESS")
-    else:
-        print("TASK FAILED")
-
-
-if __name__ == "__main__":
-    main()
