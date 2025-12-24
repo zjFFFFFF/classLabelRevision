@@ -1,4 +1,7 @@
-def run_task2(task: str) -> bool:
+import sys
+import os
+
+def run_task(task: str) -> bool:
     """
     根据任务描述执行运维指令
     """
