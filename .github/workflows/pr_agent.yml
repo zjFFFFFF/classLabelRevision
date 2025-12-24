@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Debug OPENAI_KEY
-        run: echo "OPENAI_KEY=${OPENAI_KEY}"
+        run: echo "${OPENAI_KEY}"
         env:
           OPENAI_KEY: ${{ secrets.DEEPSEEK_KEY }}
 
