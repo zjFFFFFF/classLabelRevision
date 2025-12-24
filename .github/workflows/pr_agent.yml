@@ -22,8 +22,10 @@ jobs:
       - name: Debug env
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "DEEPSEEK_API_KEY length = ${#DEEPSEEK_KEY}"
+          echo "DEEPSEEK_API_KEY length = ${#GITHUB_TOKEN}"
 
       # 2️⃣ 运行 pr-agent
       - name: Run PR Agent
