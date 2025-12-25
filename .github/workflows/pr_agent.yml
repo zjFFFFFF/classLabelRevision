@@ -37,19 +37,19 @@ jobs:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
 
           # ===== 模型配置 =====
-          config.model: "deepseek/deepseek-reasoner"
+          config.model: "deepseek/deepseek-chat"
           config.fallback_models: '["deepseek/deepseek-reasoner", "deepseek/deepseek-chat"]'
           config.response_language : zh-CN
+
           pr_reviewer.require_score_review: "true"
           pr_reviewer.num_max_findings: 4
 
 
           pr_code_suggestionscommitable_code_suggestions: "true"
-          pr_code_suggestions.extra_instructions: "建议的内容请使用简体中文"
           pr_code_suggestions.suggestions_score_threshold: 6
-          pr_code_suggestions.decouple_hunks: "true"
+          pr_code_suggestions.decouple_hunks: "false"
 
-          
+
           github_action_config.auto_review: "true" # enable\disable auto review
           github_action_config.auto_describe: "true" # enable\disable auto describe
           github_action_config.auto_improve: "true" # enable\disable auto improve
