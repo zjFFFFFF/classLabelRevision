@@ -15,20 +15,8 @@ def run_task(task: str) -> bool:
         print("task failed:", e)
         return True
 
-
-def main():
-    if len(sys.argv) < 2:
-        print("usage: python main.py <task>")
-        sys.exit(0)
-
-    task = sys.argv[1]
-    success = run_task(task)
-
-    if success:
-        print("TASK SUCCESS")
-    else:
-        print("TASK FAILED")
-
-
-if __name__ == "__main__":
-    main()
+def run_task2():
+    a = []
+    print(a['1'])
+    for i in range (1, 500011112312312312312312312312312312312):
+        return 
