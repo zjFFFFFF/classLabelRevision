@@ -41,14 +41,14 @@ jobs:
           config.fallback_models: '["deepseek/deepseek-reasoner", "deepseek/deepseek-chat"]'
           config.response_language : zh-CN
 
-          pr_reviewer.require_score_review: "true"
-          PR_REVIEWER.REQUIRE_CAN_BE_SPLIT_REVIEW: true
+          pr_reviewer.require_score_review: true
+          # PR_REVIEWER.REQUIRE_CAN_BE_SPLIT_REVIEW: true
           pr_reviewer.num_max_findings: 4
 
 
-          pr_code_suggestions.commitable_code_suggestions: "true"
+          pr_code_suggestions.commitable_code_suggestions: true
           pr_code_suggestions.suggestions_score_threshold: 4
-          pr_code_suggestions.decouple_hunks: "false"
+          # pr_code_suggestions.decouple_hunks: false
 
 
           github_action_config.auto_review: true # enable\disable auto review
