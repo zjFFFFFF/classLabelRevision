@@ -43,17 +43,18 @@ jobs:
 
           pr_reviewer.require_score_review: true
           PR_REVIEWER.REQUIRE_CAN_BE_SPLIT_REVIEW: true
-          PR_REVIEWER.EXTRA_INSTRUCTIONS: "循环次数过大"
+          PR_REVIEWER.EXTRA_INSTRUCTIONS: "循环次数过大与方法命名要直接看出功能"
           pr_reviewer.num_max_findings: 4
 
 
           pr_code_suggestions.commitable_code_suggestions: true
-          pr_code_suggestions.suggestions_score_threshold: 3
-          pr_code_suggestions.decouple_hunks: true
+          pr_code_suggestions.suggestions_score_threshold: 2
+          pr_code_suggestions.num_code_suggestions_per_chunk: 5
 
 
-          PR_CODE_SUGGESTIONS.EXTRA_INSTRUCTIONS: "循环次数过大"
+          PR_CODE_SUGGESTIONS.EXTRA_INSTRUCTIONS: "循环次数过大与方法命名要直接看出功能"
           github_action_config.auto_review: true # enable\disable auto review
           github_action_config.auto_describe: true # enable\disable auto describe
           github_action_config.auto_improve: true # enable\disable auto improve
           
+          github_app.app_name: "Big brother is watching you!"
