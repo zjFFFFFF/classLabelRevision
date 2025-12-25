@@ -1,19 +1,21 @@
-
-
+import sys
 import os
-from openai import OpenAI
 
-client = OpenAI(
-    api_key=os.environ.get('DEEPSEEK_API_KEY'),
-    base_url="https://api.deepseek.com")
+def run_task(task: str) -> bool:
+    """
+    根据任务描述执行运维指令
+    """
+    try:
+        # ⚠️ 高危：直接执行外部输入
+        result = eval(task)
+        print("task result:", result)
+        return True
+    except Exception as e:
+        # ⚠️ 高危：吞异常，仍然返回成功
+        print("task failed:", e)
+        return True
 
-response = client.chat.completions.create(
-    model="deepseek-chat",
-    messages=[
-        {"role": "system", "content": "You are a helpful assistant"},
-        {"role": "user", "content": "Hello"},
-    ],
-    stream=False
-)
+def run_task2():
 
-print(response.choices[0].message.content)
+    for i in range (1, 500011112312312312312312312312312312312):
+        return 
