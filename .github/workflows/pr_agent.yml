@@ -37,7 +37,7 @@ jobs:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
 
           # ===== 模型配置 =====
-          config.model: "deepseek/deepseek-chat"
+          config.model: "deepseek/deepseek-reasoner"
           config.fallback_models: '["deepseek/deepseek-reasoner", "deepseek/deepseek-chat"]'
           config.response_language : zh-CN
           pr_code_suggestions.extra_instructions: "建议的内容请使用简体中文"
