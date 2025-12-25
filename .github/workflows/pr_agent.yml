@@ -40,6 +40,9 @@ jobs:
           config.model: "deepseek/deepseek-chat"
           config.fallback_models: '["deepseek/deepseek-reasoner", "deepseek/deepseek-chat"]'
           config.response_language : zh-CN
+          pr_compliance.language: zh-CN
+          reviewer_guide.language: zh-CN
+          code_suggestions.language: zh-CN
           github_action_config.auto_review: "true" # enable\disable auto review
           github_action_config.auto_describe: "true" # enable\disable auto describe
           github_action_config.auto_improve: "true" # enable\disable auto improve
