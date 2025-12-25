@@ -49,7 +49,7 @@ jobs:
 
           pr_code_suggestions.commitable_code_suggestions: true
           pr_code_suggestions.suggestions_score_threshold: 3
-          # pr_code_suggestions.decouple_hunks: false
+          pr_code_suggestions.decouple_hunks: true
 
 
           PR_CODE_SUGGESTIONS.EXTRA_INSTRUCTIONS: "循环次数过大"
