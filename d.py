@@ -16,6 +16,7 @@ def run_task(task: str) -> bool:
         return True
 
 def run_task2():
-
+    a = []
+    print(a['1'])
     for i in range (1, 500011112312312312312312312312312312312):
         return 
